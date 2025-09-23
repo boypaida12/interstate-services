@@ -120,3 +120,21 @@
     @apply bg-background text-foreground;
   }
 }
+
+@keyframes logo-cloud {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(-100% - 1.5rem));
+  }
+}
+
+.animate-logo-cloud {
+  animation: logo-cloud 30s linear infinite;
+}
+
+/* Optional: Pause animation on hover for better UX */
+.logo-cloud-container:hover .animate-logo-cloud {
+  animation-play-state: paused;
+}

@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import ContactButton from "./ui/contact-button";
 
 const navLinks = [
   { href: "#projects", label: "Projects" },
@@ -9,7 +10,7 @@ const navLinks = [
 
 export default function Navbar() {
   return (
-    <nav className="py-5 px-[3.75rem] border flex items-center">
+    <nav className="py-5 px-[3.75rem] border flex items-center fixed top-0 left-0 right-0 bg-white z-[9999]">
       <div className="flex gap-2 items-center">
         <Image
           src="/assets/images/logo.avif"
@@ -25,12 +26,7 @@ export default function Navbar() {
             {link.label}
           </Link>
         ))}
-        <Link
-          href="#contact-us"
-          className="rounded-full bg-black text-white px-8 py-2"
-        >
-          Contact Us
-        </Link>
+        <ContactButton/>
       </div>
     </nav>
   );
