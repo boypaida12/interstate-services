@@ -30,7 +30,10 @@ export default function PastProjects() {
     setSelectedImage(id - 1);
   };
   return (
-    <div className="bg-gradient-to-r from-[#1e29ee] via-[#3026ebcf] to-[#5118a5] text-center py-20 px-[3.75rem] text-white">
+    <section
+      className="bg-gradient-to-r from-[#1e29ee] via-[#3026ebcf] to-[#5118a5] text-center py-20 px-[3.75rem] text-white"
+      id="projects"
+    >
       <h2 className="text-7xl font-medium ">Past Projects</h2>
       <p className="mx-auto mt-10 mb-20">
         Our clients are from private and public corporations. INTERSTATE have
@@ -56,6 +59,6 @@ export default function PastProjects() {
         </div>
         <AccordionDemo onSelect={handleAccordionSelect} />
       </div>
-    </div>
+    </section>
   );
 }
