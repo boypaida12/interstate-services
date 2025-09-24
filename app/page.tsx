@@ -1,5 +1,6 @@
 import Hero from "@/components/hero";
 import Navbar from "@/components/navbar";
+import PastProjects from "@/components/pastprojects";
 
 export default function Home() {
   return (
@@ -7,6 +8,7 @@ export default function Home() {
       <Navbar/>
       <main className="">
         <Hero/>
+        <PastProjects/>
       </main>
     </div>
   );
