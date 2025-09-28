@@ -3,40 +3,24 @@ import React from "react";
 
 const logos = [
   {
-    name: "Vercel",
-    url: "https://res.cloudinary.com/dfhp33ufc/image/upload/v1715881430/vercel_wordmark_dark_mhv8u8.svg",
+    name: "Kivuli",
+    url: "/assets/images/kivuli.png",
   },
   {
-    name: "Nextjs",
-    url: "https://res.cloudinary.com/dfhp33ufc/image/upload/v1715881475/nextjs_logo_dark_gfkf8m.svg",
+    name: "Amcham",
+    url: "/assets/images/acham.png",
   },
   {
-    name: "Prime",
-    url: "https://res.cloudinary.com/dfhp33ufc/image/upload/v1715276558/logos/t2awrrfzdvmg1chnzyfr.svg",
+    name: "Chess",
+    url: "/assets/images/chess.png",
   },
   {
-    name: "Trustpilot",
-    url: "https://res.cloudinary.com/dfhp33ufc/image/upload/v1715276558/logos/tkfspxqmjflfllbuqxsi.svg",
+    name: "Council",
+    url: "/assets/images/council.png",
   },
   {
-    name: "Webflow",
-    url: "https://res.cloudinary.com/dfhp33ufc/image/upload/v1715276560/logos/nymiivu48d5lywhf9rpf.svg",
-  },
-  {
-    name: "Airbnb",
-    url: "https://res.cloudinary.com/dfhp33ufc/image/upload/v1715276558/logos/pmblusboe7vkw8vxdknx.svg",
-  },
-  {
-    name: "Tina",
-    url: "https://res.cloudinary.com/dfhp33ufc/image/upload/v1715276560/logos/afqhiygywyphuou6xtxc.svg",
-  },
-  {
-    name: "Stackoverflow",
-    url: "https://res.cloudinary.com/dfhp33ufc/image/upload/v1715276558/logos/ts1j4mkooxqmscgptafa.svg",
-  },
-  {
-    name: "mistral",
-    url: "https://res.cloudinary.com/dfhp33ufc/image/upload/v1715276558/logos/tyos2ayezryjskox3wzs.svg",
+    name: "CDA",
+    url: "/assets/images/cda.png",
   },
 ];
 
@@ -59,18 +43,20 @@ const AnimatedLogoCloud: React.FC = () => {
             .map((_, index) => (
               <div
                 key={index}
-                className="flex shrink-0 animate-logo-cloud flex-row justify-around gap-6"
+                className="flex shrink-0 animate-logo-cloud flex-row justify-around gap-6 "
               >
                 {logos.map((logo, logoIndex) => (
-                  <Image
-                    width={80}
-                    height={80}
-                    key={logoIndex}
-                    src={logo.url}
-                    className="h-10 w-28 px-2 brightness-0 dark:invert"
-                    alt={logo.name}
-                    loading="lazy"
-                  />
+                  <div className="w-[15.125rem] h-15 overflow-hidden" key={logoIndex}>
+                    <Image
+                      width={80}
+                      height={80}
+                      key={logoIndex}
+                      src={logo.url}
+                      className="w-full h-full object-contain brightness-110"
+                      alt={logo.name}
+                      loading="lazy"
+                    />
+                  </div>
                 ))}
               </div>
             ))}

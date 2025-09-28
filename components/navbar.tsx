@@ -1,6 +1,8 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import React, { useState, useEffect } from "react";
 import ContactButton from "./ui/contact-button";
 
 const navLinks = [
@@ -9,25 +11,114 @@ const navLinks = [
 ];
 
 export default function Navbar() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  // Close menu when clicking on a link
+  const closeMenu = () => setIsMenuOpen(false);
+
+  // Close menu on escape key
+  useEffect(() => {
+    const handleEscape = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        setIsMenuOpen(false);
+      }
+    };
+
+    if (isMenuOpen) {
+      document.addEventListener('keydown', handleEscape);
+      // Prevent body scroll when menu is open
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+
+    return () => {
+      document.removeEventListener('keydown', handleEscape);
+      document.body.style.overflow = 'unset';
+    };
+  }, [isMenuOpen]);
+
   return (
-    <nav className="py-5 px-[3.75rem] border flex items-center fixed top-0 left-0 right-0 bg-white z-[9999]">
-      <div className="flex gap-2 items-center">
-        <Image
-          src="/assets/images/logo.avif"
-          alt="Logo"
-          width={40}
-          height={40}
-        />
-        <p className="font-sans font-semibold">Interstate Services</p>
+    <>
+      <nav className="py-5 px-[3.75rem] max-md:px-6 border-b border-gray-200 flex items-center fixed top-0 left-0 right-0 bg-white z-[9999]">
+        <div className="flex gap-2 items-center">
+          <Image
+            src="/assets/images/logo.avif"
+            alt="Logo"
+            width={40}
+            height={40}
+          />
+          <p className="font-sans font-semibold">Interstate Services</p>
+        </div>
+
+        {/* Desktop Navigation */}
+        <div className="ms-auto hidden lg:flex gap-8 items-center">
+          {navLinks.map((link) => (
+            <Link 
+              href={link.href} 
+              key={link.label} 
+              className="text-gray-700 hover:text-gray-900 transition-colors duration-200"
+            >
+              {link.label}
+            </Link>
+          ))}
+          <ContactButton />
+        </div>
+
+        {/* Mobile Hamburger Button */}
+        <button
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+          className="ms-auto lg:hidden p-2 rounded-md hover:bg-gray-100 transition-colors duration-200"
+          aria-label="Toggle menu"
+          aria-expanded={isMenuOpen}
+        >
+          {/* Hamburger Icon */}
+          <div className="w-6 h-6 flex flex-col justify-center items-center space-y-2">
+            <span
+              className={`w-5 h-[1px] bg-gray-700 transition-all duration-300 ${
+                isMenuOpen ? 'rotate-45 translate-y-1.5' : ''
+              }`}
+            />
+            <span
+              className={`w-5 h-[1px] bg-gray-700 transition-all duration-300 ${
+                isMenuOpen ? '-rotate-45 -translate-y-1' : ''
+              }`}
+            />
+          </div>
+        </button>
+      </nav>
+
+      {/* Mobile Menu Overlay */}
+
+      {/* Mobile Menu */}
+      <div
+        className={`fixed top-20 right-0 h-[25vh] w-full bg-white z-[9999] transform transition-transform duration-300 ease-in-out lg:hidden ${
+          isMenuOpen ? 'translate-x-0' : 'translate-x-full'
+        }`}
+      >
+        {/* Mobile Menu Header */}
+
+        {/* Mobile Menu Content */}
+        <div className="p-6 space-y-6 w-fit mx-auto">
+          {/* Navigation Links */}
+          <div className="space-y-4 ">
+            {navLinks.map((link) => (
+              <Link
+                href={link.href}
+                key={link.label}
+                onClick={closeMenu}
+                className="block text-lg text-gray-700 hover:text-gray-900 transition-colors duration-200 text-center"
+              >
+                {link.label}
+              </Link>
+            ))}
+          </div>
+
+          <div onClick={closeMenu}>
+            <ContactButton />
+          </div>
+        </div>
       </div>
-      <div className="ms-auto flex gap-8 items-center">
-        {navLinks.map((link) => (
-          <Link href={link.href} key={link.label} className="">
-            {link.label}
-          </Link>
-        ))}
-        <ContactButton/>
-      </div>
-    </nav>
+    </>
   );
 }
