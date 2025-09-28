@@ -92,14 +92,14 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       <div
-        className={`fixed top-20 right-0 h-[25vh] w-full bg-white z-[9999] transform transition-transform duration-300 ease-in-out lg:hidden ${
+        className={`fixed top-20 right-0 h-[24vh] w-full bg-white z-[9999] transform transition-transform duration-300 ease-in-out lg:hidden ${
           isMenuOpen ? 'translate-x-0' : 'translate-x-full'
         }`}
       >
         {/* Mobile Menu Header */}
 
         {/* Mobile Menu Content */}
-        <div className="p-6 space-y-6 w-fit mx-auto">
+        <div className="space-y-6 w-fit mx-auto">
           {/* Navigation Links */}
           <div className="space-y-4 ">
             {navLinks.map((link) => (
