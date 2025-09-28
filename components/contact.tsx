@@ -7,11 +7,11 @@ import { Button } from "./ui/button";
 
 export default function Contact() {
   return (
-    <section id="contact" className="px-[3.75rem] pb-20">
-      <h2 className="text-7xl font-medium w-1/2 mb-20">
+    <section id="contact" className="pb-20 px-6 md:px-10 xl:px-[3.75rem]">
+      <h2 className="text-7xl max-md:text-5xl max-sm:text-4xl font-medium xl:w-1/2 mb-20">
         We&apos;re Here for You Let&apos;s Connect
       </h2>
-      <div className="grid grid-cols-2">
+      <div className="grid lg:grid-cols-2 gap-4 lg:gap-0">
         <div className="flex gap-4 flex-col">
           <p className="font-semibold">Contact us at</p>
           <p className="text-[#778088]">(254) 700719943</p>

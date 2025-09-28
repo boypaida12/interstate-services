@@ -18,10 +18,10 @@ export default function Footer() {
         alt="bridge in Kenya"
         className="mx-auto"
       />
-      <h2 className="text-7xl w-1/3 mx-auto text-center font-medium my-8">
+      <h2 className="text-2xl md:text-3xl lg:text-5xl xl:text-7xl xl:w-1/3 mx-auto text-center font-medium my-8">
         Interstate Services Kenya
       </h2>
-      <div className="flex gap-36 items-center w-fit mx-auto">
+      <div className="flex gap-10 lg:gap-36 items-center w-fit mx-auto">
         {navLinks.map((link) => (
           <Link href={link.href} key={link.label} className="">
             {link.label}
@@ -29,7 +29,7 @@ export default function Footer() {
         ))}
       </div>
       <div className="h-[1px] w-4/5 mx-auto bg-gray-300 mt-20"></div>
-      <p className="text-center mt-10">Copyright © {new Date().getFullYear()} Interstate Services Kenya. All rights reserved. </p>
+      <p className="text-center mt-10 text-[0.75rem]">Copyright © {new Date().getFullYear()} Interstate Services Kenya. All rights reserved. </p>
     </footer>
   );
 }

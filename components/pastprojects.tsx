@@ -31,10 +31,10 @@ export default function PastProjects() {
   };
   return (
     <section
-      className="bg-gradient-to-r from-[#1e29ee] via-[#3026ebcf] to-[#5118a5] text-center py-20 px-[3.75rem] text-white"
+      className="bg-gradient-to-r from-[#1e29ee] via-[#3026ebcf] to-[#5118a5] text-center py-20 px-6 md:px-10 xl:px-[3.75rem] text-white"
       id="projects"
     >
-      <h2 className="text-7xl font-medium ">Past Projects</h2>
+      <h2 className="text-7xl font-medium max-md:text-5xl max-sm:text-4xl">Past Projects</h2>
       <p className="mx-auto mt-10 mb-20">
         Our clients are from private and public corporations. INTERSTATE have
         worked with international organizations and we maintain a wide database
