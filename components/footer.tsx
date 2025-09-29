@@ -12,10 +12,10 @@ export default function Footer() {
   return (
     <footer className="mt-10 py-10 relative bg-gray-100">
       <Image
-        src="/assets/images/textlogo.png"
+        src="/assets/images/footer-logo.png"
         width={200}
         height={200}
-        alt="bridge in Kenya"
+        alt="logo with text"
         className="mx-auto"
       />
       <h2 className="text-2xl md:text-3xl lg:text-5xl xl:text-7xl xl:w-1/3 mx-auto text-center font-medium my-8">
