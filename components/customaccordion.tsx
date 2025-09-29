@@ -37,15 +37,12 @@ const accordionData: AccordionData[] = [
      title: (
       <div className="flex gap-5 items-center">
         <p>02.</p>
-        <p>Track and share experiments</p>
+        <p>Diaspora Conference - Kenya/USA</p>
       </div>
     ),
     description: (
       <div className="space-y-2 w-11/12">
-        Contracted by the City of Seattle and county agencies, we delivered
-        end-to-end delgate services for a Kenyan cohort registraiton, travel
-        itineraries, accommodation blocks, and on-site coordination- so VIPs and
-        technical teams could focus on the program
+        Designed and produced an international diaspora forum at KICC, coordinating multi-country invitations, sponsorship outreach, protocol, and security liaison, and a seamless registration and media experience.
       </div>
     ),
   },
@@ -54,15 +51,12 @@ const accordionData: AccordionData[] = [
      title: (
       <div className="flex gap-5 items-center">
         <p>03.</p>
-        <p>International Water Conference - USA</p>
+        <p>CAF International Soccer Tournament - East Africa</p>
       </div>
     ),
     description: (
       <div className="space-y-2 w-11/12">
-        Contracted by the City of Seattle and county agencies, we delivered
-        end-to-end delgate services for a Kenyan cohort registraiton, travel
-        itineraries, accommodation blocks, and on-site coordination- so VIPs and
-        technical teams could focus on the program
+        As a stakeholder working with the Department of Sports, we supported CAF fixtures with transportation and accommodation for teams and officials, accreditation and venue logistics - keeping schedules tight and compliant across agencies
       </div>
     ),
   },
@@ -71,15 +65,12 @@ const accordionData: AccordionData[] = [
      title: (
       <div className="flex gap-5 items-center">
         <p>04.</p>
-        <p>Build your own visualizations</p>
+        <p>Vote Abroad International - USA</p>
       </div>
     ),
     description: (
       <div className="space-y-2 w-11/12">
-        Contracted by the City of Seattle and county agencies, we delivered
-        end-to-end delgate services for a Kenyan cohort registraiton, travel
-        itineraries, accommodation blocks, and on-site coordination- so VIPs and
-        technical teams could focus on the program
+        Contracted to mobilize Americans living overseas to participate as absentee voters through non-partisan outreach, digitall signup flows and clear, jurisdiction-specific guidance.
       </div>
     ),
   },

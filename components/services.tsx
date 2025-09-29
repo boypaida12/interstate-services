@@ -40,10 +40,10 @@ export default function Services() {
   const [activeService, setActiveService] = useState<number>(1);
 
   return (
-    <section className="py-20 px-6 md:px-10 xl:px-[3.75rem] max-md:px-6 text-center" id="services">
+    <section className="py-20 max-md:px-6 max-xl:px-10 xl:max-w-[90rem] mx-auto text-center" id="services">
       <h2 className="text-7xl max-md:text-5xl max-sm:text-4xl font-medium mb-16">Our Services</h2>
 
-      <div className="max-w-7xl mx-auto relative">
+      <div className="relative">
         <div className="absolute h-[1px] w-full bottom-0 left-0 bg-gray-200 max-lg:hidden"></div>
         
         <div className="hidden lg:grid grid-cols-4 gap-8">

@@ -12,7 +12,7 @@ const ContactButton: React.FC<ContactButtonProps> = ({
 }) => {
   return (
     <Link
-      href="#contact-us"
+      href="#contact"
       className={clsx("rounded-full bg-black text-white px-8 py-2", className)}
     >
       {name}
