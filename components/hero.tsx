@@ -22,7 +22,7 @@ export default function Hero() {
         for public impact
       </h1>
       <p className="w-8/12 lg:w-3/4 xl:w-5/12 my-12">
-        INTERSTATE has worked with various international organisations, and we
+        Our organization offers private and public services. INTERSTATE has worked with various international organisations, and we
         maintain a wide database of local and international agencies.
       </p>
       <ContactButton className="shadow-2xl" />

@@ -39,13 +39,11 @@ export default function Contact() {
       const response = await fetch('https://submit.jotform.com/submit/252711820252347', {
         method: 'POST',
         body: formDataToSend,
-        mode: 'no-cors', // JotForm requires this
+        mode: 'no-cors',
       });
 
-      // Since no-cors doesn't give us response status, we assume success
       setSubmitStatus('success');
       
-      // Reset form after 2 seconds
       setTimeout(() => {
         setFormData({ name: '', email: '', message: '' });
         setSubmitStatus('idle');
@@ -55,7 +53,6 @@ export default function Contact() {
       console.error('Form submission error:', error);
       setSubmitStatus('error');
       
-      // Reset error state after 5 seconds
       setTimeout(() => {
         setSubmitStatus('idle');
       }, 5000);
