@@ -45,8 +45,8 @@ export default function Navbar() {
           <Image
             src="/assets/images/logo.avif"
             alt="Logo"
-            width={40}
-            height={40}
+            width={52}
+            height={52}
           />
           <p className="font-sans font-semibold">Interstate Services</p>
         </div>
