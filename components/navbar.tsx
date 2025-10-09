@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React, { useState, useEffect } from "react";
 import ContactButton from "./ui/contact-button";
+import { useScroll } from "@/lib/useScroll";
 
 const navLinks = [
   { href: "#projects", label: "Projects" },
@@ -12,6 +13,7 @@ const navLinks = [
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const isScrolled = useScroll();
 
   // Close menu when clicking on a link
   const closeMenu = () => setIsMenuOpen(false);
@@ -19,28 +21,34 @@ export default function Navbar() {
   // Close menu on escape key
   useEffect(() => {
     const handleEscape = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') {
+      if (e.key === "Escape") {
         setIsMenuOpen(false);
       }
     };
 
     if (isMenuOpen) {
-      document.addEventListener('keydown', handleEscape);
+      document.addEventListener("keydown", handleEscape);
       // Prevent body scroll when menu is open
-      document.body.style.overflow = 'hidden';
+      document.body.style.overflow = "hidden";
     } else {
-      document.body.style.overflow = 'unset';
+      document.body.style.overflow = "unset";
     }
 
     return () => {
-      document.removeEventListener('keydown', handleEscape);
-      document.body.style.overflow = 'unset';
+      document.removeEventListener("keydown", handleEscape);
+      document.body.style.overflow = "unset";
     };
   }, [isMenuOpen]);
 
   return (
     <>
-      <nav className="py-5 px-[3.75rem] max-md:px-6 border-b border-gray-200 flex items-center fixed top-0 left-0 right-0 bg-white z-[9999]">
+      <nav
+        className={`py-5 px-[3.75rem] max-md:px-6 flex items-center ${
+          isScrolled ? "text-gray-600" : "text-white"
+        } fixed top-0 left-0 right-0 ${
+          isScrolled ? "bg-white" : "bg-transparent"
+        } z-[9999]`}
+      >
         <div className="flex gap-2 items-center">
           <Image
             src="/assets/images/logo.avif"
@@ -54,10 +62,12 @@ export default function Navbar() {
         {/* Desktop Navigation */}
         <div className="ms-auto hidden lg:flex gap-8 items-center">
           {navLinks.map((link) => (
-            <Link 
-              href={link.href} 
-              key={link.label} 
-              className="text-gray-700 hover:text-gray-900 transition-colors duration-200"
+            <Link
+              href={link.href}
+              key={link.label}
+              className={`${
+                isScrolled ? "text-gray-600" : "text-white"
+              } hover:underline transition-colors duration-200`}
             >
               {link.label}
             </Link>
@@ -75,13 +85,13 @@ export default function Navbar() {
           {/* Hamburger Icon */}
           <div className="w-6 h-6 flex flex-col justify-center items-center space-y-2">
             <span
-              className={`w-5 h-[1px] bg-gray-700 transition-all duration-300 ${
-                isMenuOpen ? 'rotate-45 translate-y-1.5' : ''
+              className={`w-5 h-[1px] ${isScrolled ? "bg-gray-600" : "bg-white"} transition-all duration-300 ${
+                isMenuOpen ? "rotate-45 translate-y-1.5" : ""
               }`}
             />
             <span
-              className={`w-5 h-[1px] bg-gray-700 transition-all duration-300 ${
-                isMenuOpen ? '-rotate-45 -translate-y-1' : ''
+              className={`w-5 h-[1px] ${isScrolled ? "bg-gray-600" : "bg-white"} transition-all duration-300 ${
+                isMenuOpen ? "-rotate-45 -translate-y-1" : ""
               }`}
             />
           </div>
@@ -92,8 +102,8 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       <div
-        className={`fixed top-20 right-0 h-[24vh] w-full bg-white z-[9999] transform transition-transform duration-300 ease-in-out lg:hidden ${
-          isMenuOpen ? 'translate-x-0' : 'translate-x-full'
+        className={`fixed top-20 right-0 h-[24vh] w-full bg-white z-[9999] transform transition-transform duration-300 pt-5 ease-in-out lg:hidden ${
+          isMenuOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
         {/* Mobile Menu Header */}

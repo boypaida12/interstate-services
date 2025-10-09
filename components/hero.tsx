@@ -5,7 +5,7 @@ import Image from "next/image";
 
 export default function Hero() {
   return (
-    <div className="min-h-screen flex flex-col bg-gradient-to-tl from-[#fff8f8] via-[#fff7f7cf] to-[#ffffff] items-center justify-center text-center max-sm:py-28">
+    <div className="min-h-screen bg-[url('/assets/images/hero-bg.jpg')] bg-center bg-cover text-white text-shadow-black text-shadow-md flex flex-col bg-gradient-to-tl from-[#fff8f8] via-[#fff7f7cf] to-[#ffffff] items-center justify-center text-center max-sm:py-28">
       <h1 className="text-7xl max-md:text-5xl max-sm:text-4xl px-1 font-medium">
         Professional{" "}
         <span className="text-[#3A95F4] relative z-50">

@@ -28,7 +28,7 @@ const AnimatedLogoCloud: React.FC = () => {
   return (
     <div className="w-full mt-32">
       <p>Trusted by these partners</p>
-      <div className="mx-auto w-full px-4 md:px-8">
+      <div className="mx-auto w-full px-4 md:px-8 bg-black/50">
         <div
           className="logo-cloud-container group relative mt-6 flex gap-6 overflow-hidden p-2"
           style={{
@@ -43,7 +43,7 @@ const AnimatedLogoCloud: React.FC = () => {
             .map((_, index) => (
               <div
                 key={index}
-                className="flex shrink-0 animate-logo-cloud flex-row justify-around gap-6 "
+                className="flex shrink-0 animate-logo-cloud flex-row justify-around gap-6"
               >
                 {logos.map((logo, logoIndex) => (
                   <div className="w-[15.125rem] h-15 overflow-hidden" key={logoIndex}>
@@ -52,7 +52,7 @@ const AnimatedLogoCloud: React.FC = () => {
                       height={80}
                       key={logoIndex}
                       src={logo.url}
-                      className="w-full h-full object-contain brightness-110"
+                      className="w-full h-full object-contain brightness-200"
                       alt={logo.name}
                       loading="lazy"
                     />
