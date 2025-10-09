@@ -72,7 +72,7 @@ export default function Navbar() {
               {link.label}
             </Link>
           ))}
-          <ContactButton />
+          <ContactButton className={`${isScrolled ? "text-white" : "bg-white text-black"}`}/>
         </div>
 
         {/* Mobile Hamburger Button */}

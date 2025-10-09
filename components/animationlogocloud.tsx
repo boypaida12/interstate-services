@@ -27,7 +27,7 @@ const logos = [
 const AnimatedLogoCloud: React.FC = () => {
   return (
     <div className="w-full mt-32">
-      <p>Trusted by these partners</p>
+      <p className="lg:text-xl">Trusted by these partners</p>
       <div className="mx-auto w-full px-4 md:px-8 bg-black/50">
         <div
           className="logo-cloud-container group relative mt-6 flex gap-6 overflow-hidden p-2"

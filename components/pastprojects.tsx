@@ -5,7 +5,7 @@ import React, { useEffect, useState } from "react";
 import { AccordionDemo } from "./customaccordion";
 
 const images = [
-  "/assets/images/project5.jpg",
+  "/assets/images/ecarrally.png",
   "/assets/images/project4.jpg",
   "/assets/images/project2.png",
   "/assets/images/project1.png",
@@ -35,8 +35,8 @@ export default function PastProjects() {
       id="projects"
     >
       <div className="xl:max-w-[90rem] mx-auto">
-        <h2 className="text-7xl font-medium max-md:text-5xl max-sm:text-4xl">Past Projects</h2>
-        <p className="mx-auto mt-10 mb-20">
+        <h2 className="text-7xl font-medium max-md:text-5xl max-sm:text-4xl">Our Projects</h2>
+        <p className="mx-auto mt-10 mb-20 lg:text-xl lg:w-8/12">
           Our clients are from private and public corporations. INTERSTATE have
           worked with international organizations and we maintain a wide database
           of local and international agencies.
@@ -48,10 +48,10 @@ export default function PastProjects() {
                 key={src}
                 src={src}
                 alt={`Interstate step ${index + 1}`}
-                className={`absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-300 ease-in-out ${
+                className={`absolute top-0 left-0 w-full h-full transition-opacity duration-300 ease-in-out object-cover ${
                   index === selectedImage ? "opacity-100" : "opacity-0"
                 }`}
-                width={540}
+                width={900}
                 height={540}
                 priority={index === 0}
                 loading="eager"
