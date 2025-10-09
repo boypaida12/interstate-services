@@ -5,7 +5,7 @@ import React, { useEffect, useState } from "react";
 import { AccordionDemo } from "./customaccordion";
 
 const images = [
-  "/assets/images/ecarrally.png",
+  "/assets/images/ecar.png",
   "/assets/images/project4.jpg",
   "/assets/images/project2.png",
   "/assets/images/project1.png",
