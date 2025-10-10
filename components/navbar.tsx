@@ -78,7 +78,7 @@ export default function Navbar() {
         {/* Mobile Hamburger Button */}
         <button
           onClick={() => setIsMenuOpen(!isMenuOpen)}
-          className="ms-auto lg:hidden p-2 rounded-md hover:bg-gray-100 transition-colors duration-200"
+          className="ms-auto lg:hidden p-2 rounded-md bg-transparent transition-colors duration-200"
           aria-label="Toggle menu"
           aria-expanded={isMenuOpen}
         >
@@ -117,7 +117,7 @@ export default function Navbar() {
                 href={link.href}
                 key={link.label}
                 onClick={closeMenu}
-                className="block text-lg text-gray-700 hover:text-gray-900 transition-colors duration-200 text-center"
+                className="block text-lg text-gray-700 transition-colors duration-200 text-center"
               >
                 {link.label}
               </Link>
@@ -125,7 +125,7 @@ export default function Navbar() {
           </div>
 
           <div onClick={closeMenu}>
-            <ContactButton />
+            <ContactButton className="text-white"/>
           </div>
         </div>
       </div>
