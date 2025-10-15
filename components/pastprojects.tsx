@@ -48,7 +48,7 @@ export default function PastProjects() {
                 key={src}
                 src={src}
                 alt={`Interstate step ${index + 1}`}
-                className={`absolute top-0 left-0 w-full h-full transition-opacity duration-300 ease-in-out object-cover ${
+                className={`absolute top-0 left-0 w-full h-full transition-opacity duration-300 ease-in-out ${
                   index === selectedImage ? "opacity-100" : "opacity-0"
                 }`}
                 width={900}
